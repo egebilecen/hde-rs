@@ -58,8 +58,6 @@
 #define PREFIX_OPERAND_SIZE 0x66
 #define PREFIX_ADDRESS_SIZE 0x67
 
-#pragma pack(push,1)
-
 typedef struct {
     uint8_t len;
     uint8_t p_rep;
@@ -95,8 +93,6 @@ typedef struct {
     } disp;
     uint32_t flags;
 } hde64s;
-
-#pragma pack(pop)
 
 #ifdef __cplusplus
 extern "C" {

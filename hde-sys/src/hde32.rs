@@ -4,7 +4,7 @@ extern "C" {
     pub fn hde32_disasm(code: *const c_void, hs: *mut hde32s) -> u32;
 }
 
-#[repr(C, align(1))]
+#[repr(C)]
 pub struct hde32s {
     pub len: u8,
     pub p_rep: u8,
@@ -53,14 +53,14 @@ impl Debug for hde32s {
     }
 }
 
-#[repr(C, align(1))]
+#[repr(C)]
 pub union imm_union {
     pub imm8: u8,
     pub imm16: u16,
     pub imm32: u32,
 }
 
-#[repr(C, align(1))]
+#[repr(C)]
 pub union disp_union {
     pub disp8: u8,
     pub disp16: u16,

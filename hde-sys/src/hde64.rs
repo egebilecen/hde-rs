@@ -4,7 +4,7 @@ extern "C" {
     pub fn hde64_disasm(code: *const c_void, hs: *mut hde64s) -> u32;
 }
 
-#[repr(C, align(1))]
+#[repr(C)]
 pub struct hde64s {
     pub len: u8,          // length of command
     pub p_rep: u8,        // rep/repz (0xf3) & repnz (0xf2) prefix
@@ -64,7 +64,7 @@ impl Debug for hde64s {
 }
 
 /// immediate value
-#[repr(C, align(1))]
+#[repr(C)]
 pub union imm_union {
     pub imm8: u8,
     pub imm16: u16,
@@ -73,7 +73,7 @@ pub union imm_union {
 }
 
 /// displacement
-#[repr(C, align(1))]
+#[repr(C)]
 pub union disp_union {
     pub disp8: u8,
     pub disp16: u16,
